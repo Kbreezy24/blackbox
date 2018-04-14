@@ -3,4 +3,8 @@ Blackbox is a highend CoreXY 3D Printer. Aiming for reasonable build volume, fas
 
 Most design files are released as step or rhino files. Few parts are available in Fusion 360, but im planning to recreate the whole printer in Fusion (help is highly appreaciated!). If there are missing or faulty parts feel free to file an issue on github.
 
-You can support me on patreon.com/layershift to help me work more on my open source projects
+You can support me on patreon.com/layershift to help me work more on this project
+
+All files are released according to the following license unless specified differently in the file or directory: CC-by-NC: http://creativecommons.org/licenses/by-nc/3.0/
+
+Marc Schömann
