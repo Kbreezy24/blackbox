@@ -7,6 +7,6 @@ Most design files are released as step or rhino files. Few parts are available i
 
 You can support me on www.patreon.com/layershift to help me work more on this project
 
-All files are released according to the following license unless specified differently in the file or directory: CC-by-NC: www.creativecommons.org/licenses/by-nc/3.0/
+All files are released according to the following license unless specified differently in the file or directory: CC-by-NC: https://creativecommons.org/licenses/by-sa/4.0/
 
 Marc Schömann
