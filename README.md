@@ -1,11 +1,12 @@
 # blackbox
-Blackbox is a highend CoreXY 3D Printer. Aiming for reasonable build volume, fast printspeeds and high resolution.
+Blackbox is a open source CoreXY tool-changing 3D Printer.
 
-You can follow the development on www.hackaday.io/project/57020-blackbox-3d-printer and www.instagram.com/layershift
+You can follow the development on https://layershift.xyz/blackbox3dprinter/
+Forum: https://layershift.xyz/forum
+Patreon: https://www.patreon.com/layershift
+Instagram: https://www.instagram.com/layershift
 
-Most design files are released as step or rhino files. Few parts are available in Fusion 360, but im planning to recreate the whole printer in Fusion (help is highly appreaciated!). If there are missing or faulty parts feel free to file an issue on github.
-
-You can support me on www.patreon.com/layershift to help me work more on this project
+Github is not the Ideal platform to share 3D files, so this Repository is discontinued! 
 
 All files are released according to the following license unless specified differently in the file or directory: CC-by-NC: https://creativecommons.org/licenses/by-sa/4.0/
 
