@@ -7,6 +7,7 @@ Patreon: https://www.patreon.com/layershift
 Instagram: https://www.instagram.com/layershift
 
 Github is not the Ideal platform to share 3D files, so this Repository is discontinued! 
+Files can be downloaded at https://layershift.xyz/blackbox3dprinter/
 
 All files are released according to the following license unless specified differently in the file or directory: CC-by-NC: https://creativecommons.org/licenses/by-sa/4.0/
 
