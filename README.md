@@ -66,6 +66,11 @@ Tool Offsets: Fully automated tool offset configuration using the late Danal Est
 
 Heated Bed: Mains heated and ultra flat with options for embedded magnets
 
+# Attributions:
+
+Tool lock wedge plates are from the Jubilee Project https://github.com/machineagency/jubilee
+Heated Bed is from the Voron Project https://github.com/VoronDesign/Voron-2
+
 
 All files are released according to the following license unless specified differently in the file or directory: CERN-OHL-W: https://ohwr.org/project/cernohl/wikis/Documents/CERN-OHL-version-2
 
