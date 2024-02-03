@@ -10,7 +10,7 @@ Yes - Blackbox is supported by KB3D! Parts are available individually or as comp
 
 # This machine looks intimidating, can I build one? 
 
-Yes, but maybe. Blackbox has some new (to most) design elements that will push you to learn about systems you may not have dealt with before. In general though, the recommendations from other DIY printer build communities translate well. Those are typically as follows:
+Yes, but maybe. Blackbox has some new (to most) design elements that will push you to learn about systems you may not have dealt with before. In general though, the recommendations from other DIY printer build communities translate well. Those are typically as follows:<br />
 
 This probably shouldn’t be your first 3D printer. There are always exceptions, but the experience you have will likely lean on your previously acquired skills from using and maintaining other machines. 
 Despite our best efforts to guide you along, every machine will be different. From the quality of the printed parts to the nuances of your particular configuration. You should be comfortable with the fact that your attention to detail and where-with-all will determine the final product.
@@ -20,11 +20,11 @@ You will learn a ton, and probably pick up some new tools to make your life easi
  
 Absolutely! We encourage everyone to give back to the project however possible. Here are some ideas:
 
-Sharing of modifications made to your machine that you think improve the experience or broaden the use case 
-CAD optimization and contribution 
-Bug fixes, error reporting, and feedback/suggestions 
-Documentation refinement
-Help your peers where possible 
+Sharing of modifications made to your machine that you think improve the experience or broaden the use case<br />
+CAD optimization and contribution<br />
+Bug fixes, error reporting, and feedback/suggestions<br />
+Documentation refinement<br />
+Help your peers where possible<br />
 Purchasing parts through our official store at KB3D. 
 
 # Features and Specs: 
@@ -34,31 +34,31 @@ Blackbox is a fully open source design years in the making. Proven results over 
 
 # Mechanical: 
 Build Area = 300x300x275(Z)
-Extremely Space efficient machine size vs build size when compared to other Tool Changers
-CoreXY Motion System = Intuitive belt routing with easy to use tensioning system.
-Belt Driven Z-Axis = Extremely fast belted Z axis with counterweight system.
-Tool-Changing = Up to 5 chassis mounted tools
-FDM = Up to 5 direct drive FDM tool heads with excellent positional accuracy via kinematic coupling. Support for multiple hot end configurations.
-Unique X-axis mounted extruder motor saves cost and complexity
-Silicone nozzle wiping and sealing
-Enclosure = Fully enclosed build volume (Hood Optional)
-REPRAP = Designed in the spirit of Reprap utilizing easily obtainable and 3D printable parts.
-Watercooling = Passive watercooling of all tools at all times in addition to a passively cooled extruder stepper
-Fully automated tool offset configuration using the late Danal Estes TAMV alignment system run from a Raspberry Pi.
+Extremely Space efficient machine size vs build size when compared to other Tool Changers<br />
+CoreXY Motion System = Intuitive belt routing with easy to use tensioning system.<br />
+Belt Driven Z-Axis = Extremely fast belted Z axis with counterweight system.<br />
+Tool-Changing = Up to 5 chassis mounted tools<br />
+FDM = Up to 5 direct drive FDM tool heads with excellent positional accuracy via kinematic coupling. Support for multiple hot end configurations.<br />
+Unique X-axis mounted extruder motor saves cost and complexity<br />
+Silicone nozzle wiping and sealing<br />
+Enclosure = Fully enclosed build volume (Hood Optional)<br />
+REPRAP = Designed in the spirit of Reprap utilizing easily obtainable and 3D printable parts.<br />
+Watercooling = Passive watercooling of all tools at all times in addition to a passively cooled extruder stepper<br />
+Fully automated tool offset configuration using the late Danal Estes TAMV alignment system run from a Raspberry Pi.<br />
 Heated Bed: Mains heated and ultra flat with options for embedded magnets
 
 # Electronics: 
-Wiring = Designed with clean and functional wiring in mind
-Duet 3 Electronics
-Automatic Bed Leveling and Z-Offset Calibration
-24V, 12V and 5V power sources for extreme flexibility
-Blackstop Hall Effect Sensors
+Wiring = Designed with clean and functional wiring in mind<br />
+Duet 3 Electronics<br />
+Automatic Bed Leveling and Z-Offset Calibration<br />
+24V, 12V and 5V power sources for extreme flexibility<br />
+Blackstop Hall Effect Sensors<br />
 Tool lock position end stop - never drop a tool!
 
 
 # Attributions:
 
-Tool lock wedge plates are from the Jubilee Project https://github.com/machineagency/jubilee
+Tool lock wedge plates are from the Jubilee Project https://github.com/machineagency/jubilee<br />
 Heated Bed is from the Voron Project https://github.com/VoronDesign/Voron-2
 
 
