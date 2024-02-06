@@ -1,7 +1,7 @@
 # Blackbox
 Blackbox is an open source CoreXY tool-changing 3D Printer. Originally designed and open-sourced by Marc Schömann
 
-Blackbox is a tool changing 3D Printer originally designed by Marc Schöemann in 2016 to overcome the issue on properly integrating flexible materials with rigid materials for the production of flexible robotic appendages. The current revision of Blackbox was released as an open source project in 2017 and today we are happy to bring you the first of the Blackbox Family of tool changers - Blackbox CE (Community Edition). CE aims to accelerate the project through community participation and engagement via an accessible BOM and ease-of-assembly refinements.
+Blackbox is a tool changing 3D Printer originally designed by Marc Schöemann to overcome the issue on properly integrating flexible materials with rigid materials for the production of flexible robotic appendages. The current revision of Blackbox was released as an open source project in 2017 and today we are happy to bring you the first of the Blackbox Family of tool changers - Blackbox CE (Community Edition). CE aims to accelerate the project through community participation and engagement via an accessible BOM and ease-of-assembly refinements.
 
 # Is there a kit available for parts? 
 
