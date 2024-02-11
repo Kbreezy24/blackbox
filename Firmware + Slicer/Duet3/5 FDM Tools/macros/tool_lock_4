@@ -1,0 +1,5 @@
+G1 H1 A-350 F12000 ; Enable Motor and re-set home position
+G91                 ; Set relative movements
+G0 A10 F12000        ; Rotate tool lock Clockwise
+M18 A               ; Turn A Motor off to avoid overheat
+G90                  ; Restore abs

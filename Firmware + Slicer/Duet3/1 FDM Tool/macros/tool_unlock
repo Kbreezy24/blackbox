@@ -1,0 +1,4 @@
+
+G91               ; relative positioning
+G1 H1 A-350 F12000 ; move quickly to A (toollock) axis endstop and stop there (first pass)
+G90
