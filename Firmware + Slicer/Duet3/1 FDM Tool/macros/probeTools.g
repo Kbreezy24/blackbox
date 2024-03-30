@@ -15,6 +15,7 @@
 ; probe X and Y coordinates
 var plateX = 267.5
 var plateY = 268.5
+var staticOffset = 0.4 ;Static modifier based on unique trigger height
 ; set acceleration values for P&T for smoother movement
 M204 T4000 P4000
 ; instantaneous velocity change limits for smoother movement
@@ -66,8 +67,8 @@ G90 G1 X{var.plateX} Y{var.plateY} F6000
 G30 S-1 K1
 ; capture trigger height and calulate initial offset (without endstop trigger height adjustment)
 set var.t0_offset = move.axes[2].machinePosition - var.probePoint 
-; apply endstop trigger height adjustment for final offset value - final value compensates for switch overtravel
-set var.t0_offset = var.offsetProbe - var.t0_offset + 0.4
+; apply endstop trigger height adjustment for final offset value
+set var.t0_offset = var.offsetProbe - var.t0_offset + var.staticOffset ; final value compensates for switch overtravel
 ; drop bed before next operation for clearance
 G91 G1 Z5 G90
 
