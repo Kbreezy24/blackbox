@@ -7,22 +7,37 @@
 ;       - update the variables plateX and plateY as needed to reflect the actual position of your probe in your machine coordinates.
 ;       - ensure all your tools are at printing temperatures for best results
 ;       - ensure all your tool nozzles are clean from material and/or debris before probing, and its recommended to unload filaments from your tools before probing to ensure nothing flows out of the nozzle during the probing cycle
-;       - this file is designed to probe 3 tools; if you have less, comment out the relevant lines in the code as needed. If you have more tools, add the necessary calculation variables and probing sequence and results as needed.
 ;       !! - ensure your definition for your doorknob probe (M558 line below) is correct for your setup !!
 ;
 ; DISCLAIMER: You bear full responsibility and accountability for using this script, and the author is not liable, nor responsible, nor accountable for any damage or misuse of this script.
 ;4.3mm above bed = Trigger point for sexbolt
+;
+;
+;
+;
 ; ----------------------------------------------- machine setup
 ; probe X and Y coordinates
-var plateX = 267.6
-var plateY = 267.7
-var staticOffset = 0.4 ;Static modifier based on unique trigger height
+var plateX = 266.2 ; Z Offset Probe location in X Direction (Determined with no tool active)
+var plateY = 268.5 ; Z Offset Probe location in Y Direction (Determined with no tool active)
+
+var staticOffset = 0.4 ;Static modifier based on unique trigger height -- More Negative = More Clearance
+;------------------------------------------------ variable construction
+var offsetX = 42   ; Predetermined Value of Carriage Mounted Z Switch compared to nozzle tip
+var offsetY = -30  ; Predetermined Value of Carriage Mounted Z Switch compared to nozzle tip
+var nozzleTipX = 0
+var nozzleTipY = 0
+
+set var.nozzleTipX = var.plateX + var.offsetX
+set var.nozzleTipY = var.plateY + var.offsetY
+
 ; set acceleration values for P&T for smoother movement
 M204 T4000 P4000
 ; instantaneous velocity change limits for smoother movement
 M566 X400 Y400 P1
 ; re-define doorknob probe in case it is missing
 M558 K1 P8 C"^io5.in" F200 H50
+; placeholder for default Z endstop definition
+;M558 P5 C"zstop" H10 A5 T42000 S0.02 F200
 ; disable any mesh compensation applied to the machine
 M561
 
@@ -37,7 +52,7 @@ var t1_offset = 0
 
 ; ----------------------------------------------- probing sequence
 echo "***** Probing endstop to doorknob trigger height difference.."
-; unload tools (in case we've left anything on the carriage
+; unload tools (in case we've left anything on the carriage)
 T-1
 ; drop bed slightly and move to probe point
 G91 G1 Z5 G90
@@ -62,7 +77,7 @@ echo "***** Measuring T0 offset.."
 T0
 ; drop bed slightly and move to probe point
 G91 G1 Z5 G90
-G90 G1 X{var.plateX} Y{var.plateY} F6000
+G90 G1 X{var.nozzleTipX} Y{var.nozzleTipY} F6000
 ; probe tool with doorknob probe (K1)
 G30 S-1 K1
 ; capture trigger height and calulate initial offset (without endstop trigger height adjustment)
@@ -77,7 +92,7 @@ echo "***** Measuring T1 offset.."
 T1
 ; drop bed slightly and move to probe point
 G91 G1 Z5 G90
-G90 G1 X{var.plateX} Y{var.plateY} F6000
+G90 G1 X{var.nozzleTipX} Y{var.nozzleTipY} F6000
 ; probe tool with doorknob probe (K1)
 G30 S-1 K1
 ; capture trigger height and calulate initial offset (without endstop trigger height adjustment)
@@ -86,6 +101,7 @@ set var.t1_offset = move.axes[2].machinePosition - var.probePoint
 set var.t1_offset = var.offsetProbe - var.t1_offset + var.staticOffset ; final value compensates for switch overtravel
 ; drop bed before next operation for clearance
 G91 G1 Z5 G90
+
 
 
 ; ----------------------------------------------- Re-measure endstop trigger height
@@ -109,10 +125,8 @@ set var.endstopPoint = move.axes[2].machinePosition
 var offsetProbe2 =  var.endstopPoint - var.probePoint
 ; drop bed before next operation for clearance
 G91 G1 Z5 G90
-; enable mesh
-G29 S1
-; send carriage to middle bed
-G0 X150 Y150 F6000
+; send carriage to origin point (0,0)
+G0 X0 Y0 F6000
 
 ; ----------------------------------------------- Probe Report
 echo "----------------------------------------------------------------"

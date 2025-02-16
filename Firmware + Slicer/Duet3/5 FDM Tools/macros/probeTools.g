@@ -11,11 +11,25 @@
 ;
 ; DISCLAIMER: You bear full responsibility and accountability for using this script, and the author is not liable, nor responsible, nor accountable for any damage or misuse of this script.
 ;4.3mm above bed = Trigger point for sexbolt
+;
+;
+;
+;
 ; ----------------------------------------------- machine setup
 ; probe X and Y coordinates
-var plateX = 267.5
-var plateY = 268.5
-var staticOffset = 0.4 ;Static modifier based on unique trigger height
+var plateX = 266.2 ; Z Offset Probe location in X Direction (Determined with no tool active)
+var plateY = 268.5 ; Z Offset Probe location in Y Direction (Determined with no tool active)
+
+var staticOffset = 0.4 ;Static modifier based on unique trigger height -- More Negative = More Clearance
+;------------------------------------------------ variable construction
+var offsetX = 42   ; Predetermined Value of Carriage Mounted Z Switch compared to nozzle tip
+var offsetY = -30  ; Predetermined Value of Carriage Mounted Z Switch compared to nozzle tip
+var nozzleTipX = 0
+var nozzleTipY = 0
+
+set var.nozzleTipX = var.plateX + var.offsetX
+set var.nozzleTipY = var.plateY + var.offsetY
+
 ; set acceleration values for P&T for smoother movement
 M204 T4000 P4000
 ; instantaneous velocity change limits for smoother movement
@@ -41,7 +55,7 @@ var t4_offset = 0
 
 ; ----------------------------------------------- probing sequence
 echo "***** Probing endstop to doorknob trigger height difference.."
-; unload tools (in case we've left anything on the carriage
+; unload tools (in case we've left anything on the carriage)
 T-1
 ; drop bed slightly and move to probe point
 G91 G1 Z5 G90
@@ -66,7 +80,7 @@ echo "***** Measuring T0 offset.."
 T0
 ; drop bed slightly and move to probe point
 G91 G1 Z5 G90
-G90 G1 X{var.plateX} Y{var.plateY} F6000
+G90 G1 X{var.nozzleTipX} Y{var.nozzleTipY} F6000
 ; probe tool with doorknob probe (K1)
 G30 S-1 K1
 ; capture trigger height and calulate initial offset (without endstop trigger height adjustment)
@@ -81,7 +95,7 @@ echo "***** Measuring T1 offset.."
 T1
 ; drop bed slightly and move to probe point
 G91 G1 Z5 G90
-G90 G1 X{var.plateX} Y{var.plateY} F6000
+G90 G1 X{var.nozzleTipX} Y{var.nozzleTipY} F6000
 ; probe tool with doorknob probe (K1)
 G30 S-1 K1
 ; capture trigger height and calulate initial offset (without endstop trigger height adjustment)
@@ -96,7 +110,7 @@ echo "***** Measuring T2 offset.."
 T2
 ; drop bed slightly and move to probe point
 G91 G1 Z5 G90
-G90 G1 X{var.plateX} Y{var.plateY} F6000
+G90 G1 X{var.nozzleTipX} Y{var.nozzleTipY} F6000
 ; probe tool with doorknob probe (K1)
 G30 S-1 K1
 ; capture trigger height and calulate initial offset (without endstop trigger height adjustment)
@@ -111,7 +125,7 @@ echo "***** Measuring T3 offset.."
 T3
 ; drop bed slightly and move to probe point
 G91 G1 Z5 G90
-G90 G1 X{var.plateX} Y{var.plateY} F6000
+G90 G1 X{var.nozzleTipX} Y{var.nozzleTipY} F6000
 ; probe tool with doorknob probe (K1)
 G30 S-1 K1
 ; capture trigger height and calulate initial offset (without endstop trigger height adjustment)
@@ -126,7 +140,7 @@ echo "***** Measuring T4 offset.."
 T4
 ; drop bed slightly and move to probe point
 G91 G1 Z5 G90
-G90 G1 X{var.plateX} Y{var.plateY} F6000
+G90 G1 X{var.nozzleTipX} Y{var.nozzleTipY} F6000
 ; probe tool with doorknob probe (K1)
 G30 S-1 K1
 ; capture trigger height and calulate initial offset (without endstop trigger height adjustment)
